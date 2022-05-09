@@ -18,14 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          lfs: true
-
-      - name: Checkout LFS objects
-        run: git lfs pull
 
       - name: Setup Python version
         uses: actions/setup-python@v1
@@ -71,6 +65,6 @@ jobs:
           app-name: 'exampleflaskfunction'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6F6ADCCBE3D7497B934B32B125EE1772 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FCAF98CBBA324FCD8F1B1242A96149F9 }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
